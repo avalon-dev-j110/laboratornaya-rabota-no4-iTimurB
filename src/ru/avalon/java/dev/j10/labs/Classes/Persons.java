@@ -28,7 +28,7 @@ public class Persons implements Person {
             return birthDate.compareTo(persons.birthDate);
         }
         else {
-            return name.compareTo(persons.name);
+            return this.name.compareTo(persons.name);
         }
     }
 
