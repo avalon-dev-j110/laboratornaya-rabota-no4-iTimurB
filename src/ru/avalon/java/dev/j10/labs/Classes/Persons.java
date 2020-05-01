@@ -13,26 +13,27 @@ public class Persons implements Person {
         this.birthDate = birthDate;
     }
 
-    @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
     @Override
-    public int compareTo(Object t) {
-        Persons persons = (Persons) t;
-        int res;
-        res = name.compareTo(persons.getName());
-        if (res == 0) {
-            res = birthDate.compareTo(persons.getBirthDate());
+    public int compareTo(Object o) {
+        Persons persons = (Persons) o;
+        if (this.name.compareTo(persons.name) == 0) {
+            return birthDate.compareTo(persons.birthDate);
         }
-        return res;
-
+        else {
+            return name.compareTo(persons.name);
+        }
     }
 
+    @Override
+    public String toString() {
+        return name + " : " + birthDate;
+    }
 }

@@ -8,7 +8,14 @@ public class newComparator implements Comparator<String> {
     public int compare(String t, String t1) {
         String str1 = (String) t;
         String str2 = (String) t1;
-
-        return str1.compareTo(str2);
+        if (str1.compareTo(str2) > 0) {
+            return -1;
+        }
+        else if (str1.compareTo(str2) < 0) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
 }
